@@ -1,11 +1,11 @@
 const solution = (numbers, hand) => {
   let answer = "";
-  let matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
-    [10, 11, 12],
-  ];
+
+  let matrix = [];
+  for (let i = 0; i <= 3; i++) {
+    matrix.push([i * 3 + 1, i * 3 + 2, i * 3 + 3]);
+  }
+
   let lastL = 10;
   let lastR = 12;
 
