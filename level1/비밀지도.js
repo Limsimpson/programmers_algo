@@ -59,9 +59,9 @@ const solution = (n, arr1, arr2) => {
 //   return answer;
 // }
 
-// function add(n, arr1, arr2) {
-//   var value1 = "0".repeat(n - arr1.length) + arr1;
-//   var value2 = "0".repeat(n - arr2.length) + arr2;
+// function add(n, v1, v2) {
+//   var value1 = "0".repeat(n - v1.length) + v1;
+//   var value2 = "0".repeat(n - v2.length) + v2;
 //   var str = "";
 
 //   for (var i = 0; i < n; i++) {
