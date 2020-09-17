@@ -23,6 +23,43 @@ const solution = (n, arr1, arr2) => {
   return bitwise;
 };
 
+// 처음 풀었던 풀이
+// const solution = (n, arr1, arr2) => {
+//   let answer = [];
+//   let binary_arr1 = arr1.map((el) => el.toString(2));
+//   let binary_arr2 = arr2.map((el) => el.toString(2));
+
+//   binary_arr1 = binary_arr1.map((el) => {
+//     if (el.length !== n) {
+//       let elLength = n - el.length;
+//       for (let zero_i = 0; zero_i < elLength; zero_i++) {
+//         el = "0" + el;
+//       }
+//     }
+//     return el;
+//   });
+
+//   binary_arr2 = binary_arr2.map((el) => {
+//     if (el.length !== n) {
+//       let elLength = n - el.length;
+//       for (let zero_i = 0; zero_i < elLength; zero_i++) {
+//         el = "0" + el;
+//       }
+//     }
+//     return el;
+//   });
+
+//   for (let i = 0; i < n; i++) {
+//     let str = "";
+//     for (let j = 0; j < n; j++) {
+//       str += binary_arr1[i][j] === "0" && binary_arr2[i][j] === "0" ? " " : "#";
+//     }
+//     answer.push(str);
+//   }
+//   return answer;
+// };
+
+//////////////////
 // 엄청나게 간단한 풀이
 // const addZero = (n, s) => {
 //   return "0".repeat(n - s.length) + s;
@@ -36,6 +73,7 @@ const solution = (n, arr1, arr2) => {
 //   );
 // }
 
+//////////////////////////
 // es7 padStart를 이용한 풀이
 // const solution = (n, arr1, arr2) =>
 //   arr1.map((arr1, i) =>
@@ -46,6 +84,7 @@ const solution = (n, arr1, arr2) => {
 //       .replace(/1/g, "#")
 //   );
 
+////////////////////////////////
 // bitwise operator를 쓰지 않고 풀이
 // function solution(n, arr1, arr2) {
 //   var answer = [];
