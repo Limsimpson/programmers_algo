@@ -5,3 +5,6 @@ const solution = (s) => {
   });
   return strToArr.join("");
 };
+
+// 더 간단한 풀이
+// return s.split("").sort().reverse().join("");
