@@ -1,4 +1,4 @@
-function solution(s) {
+const solution = (s) => {
   let middle = Math.round(s.length / 2);
   let isEven = s.length % 2 === 0;
 
