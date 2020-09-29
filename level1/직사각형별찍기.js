@@ -8,3 +8,11 @@ process.stdin.on("data", (data) => {
     console.log("*".repeat(a));
   }
 });
+
+// for문만 이용한 풀이
+// for (let i = 0; i < b; i++) {
+//   for (let j = 0; j < a; j++) {
+//     result += "*";
+//   }
+//   result += "\n";
+// }
