@@ -1,5 +1,5 @@
 const solution = (n, lost, reserve) => {
-  let duplicate = reserve.filter((el, idx) => {
+  let duplicate = reserve.filter((el) => {
     return el === lost[lost.indexOf(el)];
   });
 
@@ -36,7 +36,7 @@ const solution = (n, lost, reserve) => {
 };
 // 7번 : 정렬, 11번 : 인덱스 초기화
 
-// filter와 includes를 사용, filter와 find를 사용한 짧은 풀이 ///////////
+// filter와 includes를 사용, filter와 find를 사용한 짧은 풀이 (속도 빠름) ///////////
 // function solution(n, lost, reserve) {
 //   const realLost = lost.filter((l) => !reserve.includes(l));
 //   let realReserve = reserve.filter((r) => !lost.includes(r));
@@ -50,7 +50,7 @@ const solution = (n, lost, reserve) => {
 //   );
 // }
 
-// answer를 배열로 만든 풀이
+// answer를 배열로 만든 풀이 (속도가 많이 느림) ////////////////////////
 // function solution(n, lost, reserve) {
 //   const actualReserve = reserve.filter((el) => lost.indexOf(el) === -1);
 //   const actualLost = lost.filter((el) => reserve.indexOf(el) === -1);
