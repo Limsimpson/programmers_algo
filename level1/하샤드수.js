@@ -27,3 +27,8 @@ const solution = (x) => {
 //     result = false;
 //   return result;
 // }
+
+// 재귀 풀이 ////////////////////////
+// const solution = (x, i = 0, sum = 0) => {
+//   return String(x).length == i ? x % sum == 0 : solution(x, i + 1, sum + String(x)[i] * 1);
+// }
