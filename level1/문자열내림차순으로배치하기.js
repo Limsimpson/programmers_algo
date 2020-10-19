@@ -7,4 +7,4 @@ const solution = (s) => {
 };
 
 // 더 간단한 풀이
-// return s.split("").sort().reverse().join("");
+return s.split("").sort().reverse().join("");

@@ -12,16 +12,16 @@ const solution = (numbers) => {
 };
 
 // for문과 new Set을 이용한 풀이
-// function solution(numbers) {
-//   const temp = [];
+function solution(numbers) {
+  const temp = [];
 
-//   for (let i = 0; i < numbers.length; i++) {
-//     for (let j = i + 1; j < numbers.length; j++) {
-//       temp.push(numbers[i] + numbers[j]);
-//     }
-//   }
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = i + 1; j < numbers.length; j++) {
+      temp.push(numbers[i] + numbers[j]);
+    }
+  }
 
-//   const answer = [...new Set(temp)];
+  const answer = [...new Set(temp)];
 
-//   return answer.sort((a, b) => a - b);
-// }
+  return answer.sort((a, b) => a - b);
+}

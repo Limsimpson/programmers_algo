@@ -7,4 +7,4 @@ const solution = (a, b) => {
 };
 
 // 짧은 풀이////////////////
-// return ((a + b) * (Math.abs(b - a) + 1)) / 2;
+return ((a + b) * (Math.abs(b - a) + 1)) / 2;

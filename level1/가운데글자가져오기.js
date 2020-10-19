@@ -3,4 +3,4 @@ const solution = (s) => {
   let isEven = s.length % 2 === 0;
 
   return isEven ? s[middle - 1] + s[middle] : s[middle - 1];
-}
+};

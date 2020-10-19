@@ -7,4 +7,4 @@ const solution = (arr) => {
 };
 
 // filter를 사용한 간단한 풀이
-// return arr.filter((val, idx) => val != arr[idx + 1]);
+return arr.filter((val, idx) => val != arr[idx + 1]);
