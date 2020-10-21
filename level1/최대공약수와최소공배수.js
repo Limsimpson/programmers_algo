@@ -4,7 +4,7 @@ const solution = (n, m) => {
   function multiple(num) {
     let divide = [];
     for (let i = 1; i <= num; i++) {
-      divide.push(num % i === 0 ? i : 1);
+      divide.push(num % i === 0 && i);
     }
     return divide;
   }
@@ -13,14 +13,15 @@ const solution = (n, m) => {
     return multiple(m).includes(el);
   });
 
-  commonMultiple = Math.max(...commonMultiple);
+  let MaxCommonMultiple = Math.max(...commonMultiple);
 
-  answer[0] = commonMultiple;
+  answer[0] = MaxCommonMultiple;
 
   if (commonMultiple.length === 1) {
     answer[1] = n * m;
   } else {
-    answer[1] = commonMultiple * (n / commonMultiple) * (m / commonMultiple);
+    answer[1] =
+      MaxCommonMultiple * (n / MaxCommonMultiple) * (m / MaxCommonMultiple);
   }
 
   return answer;
