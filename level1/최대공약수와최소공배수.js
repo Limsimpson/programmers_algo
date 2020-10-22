@@ -1,33 +1,16 @@
 const solution = (n, m) => {
-  let answer = [0, 0];
+  let MaxCommonMultiple = 1;
 
-  function multiple(num) {
-    let divide = [];
-    for (let i = 1; i <= num; i++) {
-      divide.push(num % i === 0 && i);
+  for (let i = 2; i <= Math.min(n, m); i++) {
+    if (n % i === 0 && m % i === 0) {
+      MaxCommonMultiple = i;
     }
-    return divide;
   }
 
-  let commonMultiple = multiple(n).filter((el) => {
-    return multiple(m).includes(el);
-  });
-
-  let MaxCommonMultiple = Math.max(...commonMultiple);
-
-  answer[0] = MaxCommonMultiple;
-
-  if (commonMultiple.length === 1) {
-    answer[1] = n * m;
-  } else {
-    answer[1] =
-      MaxCommonMultiple * (n / MaxCommonMultiple) * (m / MaxCommonMultiple);
-  }
-
-  return answer;
+  return [MaxCommonMultiple, (n * m) / MaxCommonMultiple];
 };
 
-// 효율적이고 짧은 코드 ////////////////////
+// 다른 풀이 1 ////////////////////
 const solution = (n, m) => {
   function greatestCommonDivisor(n, m) {
     return m ? greatestCommonDivisor(m, n % m) : Math.abs(n);
@@ -44,18 +27,18 @@ const solution = (n, m) => {
   return gcdlcm(n, m);
 };
 
-// 더 짧은 코드 //////////////////////////
+// 다른 풀이 2 ////////////////////
 const solution = (n, m) => {
   function gcdlcm(n, m) {
     var r;
-    // 뭐라는...건지...
     for (var nm = n * m; (r = n % m); n = m, m = r) {}
     return [m, nm / m];
   }
   return gcdlcm(n, m);
 };
 
-// 또 다른 풀이 ////////////////////////////
+// 다른 풀이 3 ////////////////////
+// 유클리드 호제법
 const solution = (n, m) => {
   function calc_gcd(n, m) {
     if (m == 0) return n;
