@@ -5,12 +5,8 @@ const solution = (s) => {
     return 0;
   } else {
     for (let i = 0; i < s.length; i++) {
-      if (0 !== answer) {
-        if (answer[answer.length - 1] === s[i]) {
-          answer.pop();
-        } else {
-          answer.push(s[i]);
-        }
+      if (answer[answer.length - 1] === s[i]) {
+        answer.pop();
       } else {
         answer.push(s[i]);
       }
