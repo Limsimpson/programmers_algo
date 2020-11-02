@@ -1,17 +1,21 @@
 const solution = (s) => {
-  s = s.split("");
+  let answer = [];
 
-  for (let i = 0; i < s.length; i++) {
-    if (1 > s.length) return;
-    else {
-      if (s[i] === s[i + 1]) {
-        s.splice(i, 2);
-        i--;
+  if (s.length % 2 !== 0) {
+    return 0;
+  } else {
+    for (let i = 0; i < s.length; i++) {
+      if (0 !== answer) {
+        if (answer[answer.length - 1] === s[i]) {
+          answer.pop();
+        } else {
+          answer.push(s[i]);
+        }
+      } else {
+        answer.push(s[i]);
       }
     }
   }
 
-  console.log(s);
-
-  return s.length === 0 ? 1 : 0;
+  return answer.length === 0 ? 1 : 0;
 };
