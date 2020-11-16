@@ -1,6 +1,6 @@
 const solution = (phone_number) => {
-  // repeat는 괄호 안의 숫자만큼 반복
-  // slice는 괄호 안의 인덱스만큼 배열을 자름, -는 뒤의 인덱스부터 계산
+  // String.repeat()는 괄호 안의 숫자만큼 string을 반복
+  // Array.slice()는 괄호 안의 인덱스만큼 배열을 자름, -는 뒤의 인덱스부터 계산
   return "*".repeat(phone_number.length - 4) + phone_number.slice(-4);
 };
 
