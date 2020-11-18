@@ -1,23 +1,27 @@
 const solution = (priorities, location) => {
-  let answer = 0;
-  let loc = priorities[location];
-
-  priorities = priorities.map((el, idx) => {
-    return { key: idx, val: el };
-  });
-  priorities = priorities.sort((a, b) => a.val - b.val);
-
-  for (let i = 0; i < priorities.length - 1; i++) {
-    if (priorities[i].val >= priorities[i + 1].val) {
-      priorities.splice(priorities[i + 1], 1);
-      answer++;
-      i--;
-    } else {
-      if (priorities[i].val === loc) {
-        answer = priorities[i].key;
-        break;
-      }
+    let answer = 1;
+    let queue = [];
+    
+    priorities.forEach((priority, idx) => {
+        queue.push({
+            priority,
+            location: idx
+        });
+    });
+    
+    while(queue.length > 0){
+        let maximum = queue.map(e => e.priority).reduce((acc, cur) => {
+            return Math.max(acc, cur)
+        });
+        if (queue[0].priority < maximum){
+            queue = [...queue.slice(1), queue[0]];
+        } else {
+            if (queue[0].location === location){
+                break;
+            }
+            queue = queue.slice(1);
+            answer++;
+        }
     }
-  }
-  return answer;
-};
+    return answer;
+}
