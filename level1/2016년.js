@@ -1,3 +1,17 @@
+// 두 번째 풀이
+const solution = (a, b) => {
+  let numOfDays = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  let daysOfWeek = ["FRI", "SAT", "SUN", "MON", "TUE", "WED", "THU"];
+  let days = b;
+
+  for (let i = 0; i < a - 1; i++) {
+    days += numOfDays[i];
+  }
+
+  return daysOfWeek[(days - 1) % 7];
+};
+
+// 첫 번째 풀이
 const solution = (a, b) => {
   let daysOfWeek = ["FRI", "SAT", "SUN", "MON", "TUE", "WED", "THU"];
   let numOfDays = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
