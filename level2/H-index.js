@@ -20,3 +20,15 @@ const solution = (citations) => {
     }
   }
 };
+
+// i가 0부터 시작하고,
+// 해당 조건을 만족할 경우 answer를 +1씩 증가하는 풀이
+const solution = (citations) => {
+  let answer = 0;
+  citations.sort((a, b) => b - a);
+  for (let i = 0; i < citations.length; i++) {
+    if (citations[i] > i) answer++;
+    else break;
+  }
+  return answer;
+};
