@@ -1,3 +1,18 @@
+// 세 번째 풀이
+const solution = (arr) => {
+  // 작은 값이 아닌 작은 값의 인덱스를 저장
+  let minIdx = 0;
+
+  if (arr.length <= 1) return [-1];
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < arr[minIdx]) minIdx = i;
+  }
+
+  arr.splice(minIdx, 1);
+  return arr;
+};
+
 // 두 번째 풀이
 const solution = (arr) => {
   let small = arr[0];
