@@ -5,7 +5,7 @@ const solution = (n) => {
   let result;
   let answer;
 
-  for (let i = 1; i < n; i++) {
+  for (let i = 2; i <= n; i++) {
     result = (prev + next) % 1234567;
     prev = next;
     next = result;
