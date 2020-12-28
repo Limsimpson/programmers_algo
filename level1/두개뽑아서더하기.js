@@ -3,10 +3,9 @@
 const solution = (numbers) => {
   let sums = [];
   for (let i = 0; i < numbers.length; i++) {
-    for (let j = 1; j < numbers.length; j++) {
+    for (let j = i + 1; j < numbers.length; j++) {
       let sum = numbers[i] + numbers[j];
-      if (i === j) continue;
-      else if (sums.indexOf(sum) === -1) sums.push(sum);
+      if (sums.indexOf(sum) === -1) sums.push(sum);
     }
   }
   return sums.sort((a, b) => a - b);
@@ -27,7 +26,7 @@ const solution = (numbers) => {
 };
 
 // new Set을 이용해 중복 제거
-function solution(numbers) {
+const solution = (numbers) => {
   const temp = [];
   for (let i = 0; i < numbers.length; i++) {
     for (let j = i + 1; j < numbers.length; j++) {
@@ -36,4 +35,4 @@ function solution(numbers) {
   }
   const answer = [...new Set(temp)];
   return answer.sort((a, b) => a - b);
-}
+};
