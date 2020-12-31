@@ -1,3 +1,10 @@
+// 두 번째 풀이
+const solution = (n)=> {
+    n = n.toString().split("");
+    return n.reduce((acc, curr) => acc + parseInt(curr), 0);
+}
+
+// 첫 번째 풀이
 const solution = (n) => {
   let answer = 0;
   let makeString = n.toString();
@@ -8,23 +15,29 @@ const solution = (n) => {
   return answer;
 };
 
-// reduce 사용 방법
-// return (n + "").split("").reduce((acc, curr) => acc + parseInt(curr), 0);
+// 재귀함수
+const solution = (n, a = 0, b = 0) => {
+  return String(n).length == a
+    ? b
+    : solution(n, a + 1, (b += String(n)[a] * 1));
+}
 
-// charAt 사용 방법
-// for (var i = 0; i < n.length; i++) {
-//   answer += n.charAt(i) * 1;
-// } 이전에 n을 string 처리
+// charAt 사용
+const solution = (n) => {
+    let answer = 0;
+    n = n.toString();
+    for (var i = 0; i < n.length; i++) {
+        answer += n.charAt(i) * 1;
+    }
+    return answer;
+}
 
-// do while
-// do {
-//   sum += n % 10;
-//   n = Math.floor(n / 10);
-// } while (n > 0);
-
-// 재귀 함수
-// function solution(n, a = 0, b = 0) {
-//   return String(n).length == a
-//     ? b
-//     : solution(n, a + 1, (b += String(n)[a] * 1));
-// }
+// do, while
+const solution = (n) => {
+    let answer = 0;
+    do {
+      answer += n % 10;
+      n = Math.floor(n / 10);
+    } while (n > 0);
+    return answer;
+}
