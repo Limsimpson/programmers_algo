@@ -12,3 +12,15 @@ function runningSum(nums: number[]): number[] {
     
     return SumNums;
 };
+
+// Solution using reduce
+function runningSum2(nums: number[]): number[] {
+    let SumNums:number[] = [];
+    
+    nums.reduce((acc, curr) => {
+        SumNums.push(acc + curr);
+        return acc + curr;
+    }, 0);
+    
+    return SumNums;
+};
