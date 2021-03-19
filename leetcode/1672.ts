@@ -22,15 +22,7 @@ function maximumWealth2(accounts: number[][]): number {
 
 // More efficient solution
 function maximumWealth3(accounts: number[][]): number {
-  return accounts.reduce(
-    (p, c) =>
-      Math.max(
-        p,
-        Math.max(
-          p,
-          c.reduce((curr, prev) => curr + prev, 0),
-        ),
-      ),
-    0,
-  );
-}
+  return accounts.reduce((acc: number, curr: number[]) => 
+    Math.max(acc, curr.reduce((prev: number, next: number) => prev + next, 0))
+  ,0);
+};
