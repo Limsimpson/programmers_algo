@@ -18,7 +18,7 @@ function solution(cacheSize, cities) {
             answer += HIT;
         } else {
             if(cache.length >= cacheSize) cache.shift();
-            cache.push(cities[i].toLowerCase());
+            cache.push(newCity);
             answer += MISS;
         }
     }
