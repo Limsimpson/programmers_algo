@@ -3,9 +3,11 @@ function solution(cacheSize, cities) {
     
     let cache = [];
     let answer = 0;
+    let HIT = 1;
+    let MISS = 5;
     
     cache.push(cities[0].toLowerCase());
-    answer += 5;
+    answer += MISS;
     
     for(let i = 1; i < cities.length; i ++) {
         let newCity = cities[i].toLowerCase();
@@ -13,11 +15,11 @@ function solution(cacheSize, cities) {
         if(cache.includes(newCity)) {
             cache.splice(cache.indexOf(newCity), 1);
             cache.push(newCity);
-            answer += 1;
+            answer += HIT;
         } else {
             if(cache.length >= cacheSize) cache.shift();
             cache.push(cities[i].toLowerCase());
-            answer += 5;
+            answer += MISS;
         }
     }
     
